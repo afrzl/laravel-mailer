@@ -60,4 +60,12 @@ class User extends Authenticatable
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
     }
+
+    /**
+     * Get all mailers for this user
+     */
+    public function mailers()
+    {
+        return $this->hasMany(Mailer::class);
+    }
 }
